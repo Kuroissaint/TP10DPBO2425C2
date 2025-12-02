@@ -1,0 +1,158 @@
+/* ===========================
+   1. GLOBAL STYLES
+   =========================== */
+   body {
+    background-color: #1a1a1a;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h2, h3 { margin-top: 0; }
+a { text-decoration: none; }
+hr { border: 0; border-top: 1px solid #444; margin: 20px 0; }
+
+/* Utility Classes */
+.hidden { display: none; }
+.text-red { color: #e74c3c; font-weight: bold; }
+.text-blue { color: #3498db; font-weight: bold; }
+.text-gold { color: #f1c40f; font-weight: bold; }
+
+/* Badge Keren */
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    background: #444;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+/* Tombol-tombol */
+.btn {
+    padding: 8px 15px;
+    color: white;
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-green { background: #27ae60; }
+.btn-green:hover { background: #2ecc71; }
+.btn-red { background: #c0392b; }
+.btn-red:hover { background: #e74c3c; }
+.btn-blue { background: #2980b9; }
+.btn-orange { background: #e67e22; }
+
+/* ===========================
+   2. HERO PROFILE (frontend)
+   =========================== */
+.profile-container {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.card {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.hero-section { width: 300px; text-align: center; }
+.inv-section { flex: 1; }
+
+.avatar {
+    width: 100px; height: 100px;
+    background: #444;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+    border: 2px solid #555;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+/* Item Box di Inventory */
+.item-box {
+    background: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #555;
+}
+.type-Weapon { border-left-color: #e74c3c; }
+.type-Accessory { border-left-color: #f1c40f; }
+.type-Consumable { border-left-color: #2ecc71; }
+
+/* ===========================
+   3. ADMIN TABLE (item_list)
+   =========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #2c2c2c;
+}
+th, td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: left;
+}
+th { background: #222; color: #aaa; text-transform: uppercase; font-size: 0.85em; }
+tr:hover { background: #333; }
+
+/* ===========================
+   4. ADMIN FORM (item_form)
+   =========================== */
+.form-container {
+    background: #2c2c2c;
+    padding: 30px;
+    width: 400px;
+    border-radius: 8px;
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+label { display: block; margin-bottom: 5px; font-weight: bold; color: #ccc; }
+input[type="text"], 
+input[type="number"], 
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+input:focus, select:focus { outline: none; border-color: #3498db; }
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+button[type="submit"]:hover { background: #3498db; }
