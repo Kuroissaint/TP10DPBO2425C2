@@ -1,0 +1,156 @@
+/* css/style.css - RPG DARK THEME */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent: #6c5ce7; /* Warna utama (ungu magic) */
+    --gold: #f1c40f;
+    --red: #e74c3c;
+    --green: #2ecc71;
+    --blue: #3498db;
+    --border: #333;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-top: 80px; /* Space untuk navbar fixed */
+    line-height: 1.6;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    background: rgba(30, 30, 30, 0.95);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-brand { font-size: 1.5rem; font-weight: bold; color: var(--accent); letter-spacing: 1px; }
+.nav-links a {
+    color: var(--text-muted);
+    margin-left: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.nav-links a:hover, .nav-links a.active { color: white; }
+
+/* --- CARDS & LAYOUT --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* --- TYPOGRAPHY & BADGES --- */
+h2, h3 { margin-top: 0; color: white; }
+.text-gold { color: var(--gold); font-weight: bold; }
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #333;
+    border: 1px solid #444;
+}
+
+/* --- HP & MANA BARS (NEW!) --- */
+.stat-bar-container {
+    background: #333;
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    margin-top: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.stat-bar-fill { height: 100%; border-radius: 10px; }
+.bar-hp { background: var(--red); box-shadow: 0 0 10px var(--red); }
+.bar-mana { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    display: inline-block;
+}
+.btn-green { background: var(--green); color: #000; }
+.btn-green:hover { background: #27ae60; box-shadow: 0 0 15px var(--green); }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-disabled { background: #444; color: #888; cursor: not-allowed; }
+
+/* --- ITEM BOX --- */
+.item-box {
+    background: #252525;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #555;
+}
+.type-Weapon { border-left-color: var(--red); }
+.type-Accessory { border-left-color: var(--gold); }
+.type-Consumable { border-left-color: var(--green); }
+
+/* --- TABLE (ADMIN) --- */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; background: var(--bg-card); border-radius: 8px; overflow: hidden; }
+th { background: #252525; padding: 15px; text-align: left; color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; }
+td { padding: 15px; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover { background: #2a2a2a; }
+
+/* --- FORMS --- */
+.form-container { width: 400px; margin: 50px auto; background: var(--bg-card); padding: 30px; border-radius: 12px; }
+input, select {
+    width: 100%; padding: 12px; margin: 8px 0 20px;
+    background: #121212; border: 1px solid #333; color: white; border-radius: 6px;
+}
+input:focus, select:focus { border-color: var(--accent); outline: none; }

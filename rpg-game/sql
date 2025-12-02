@@ -1,0 +1,13 @@
+CREATE TABLE inventory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    hero_id INT NOT NULL,
+    item_id INT NOT NULL,
+    
+    -- Logika Penting RPG
+    is_equipped BOOLEAN DEFAULT 0, -- 0 = Di tas, 1 = Dipakai (Stats nambah)
+    quantity INT DEFAULT 1,        -- Berguna buat Potion (punya 10 biji)
+    
+    FOREIGN KEY (hero_id) REFERENCES heroes(id) ON DELETE CASCADE,
+    FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE CASCADE
+);
+
