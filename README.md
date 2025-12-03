@@ -40,6 +40,8 @@ rpg-game/
 ```
 # 🗄️ Desain Database & Fitur Proyek
 
+Saya mengambil tema tentang karakter game RPG dengan fitur manajemen hero, items, dan inventory/backpack dari hero, sehingga terdapat 6 tabel secara total.
+
 <img width="730" height="613" alt="image" src="https://github.com/user-attachments/assets/eec62493-1e9d-4b34-b0af-d4b76956b24b" />
 
 Proyek ini menggunakan relasi database dengan konsep **Inheritance** pada tabel `items` dan **Many-to-Many** pada `inventory`.
